@@ -4,6 +4,7 @@ Final solution for the AWH Clockwork interview exercise.
 ### How to run the application ###
 * Clone this repository
 * Open the solution
+* If you encounter missing reference errors, kindly run "Update-Package -reinstall" command in Package Manager Console.
 * Run Clockwork.API
 * Update value of "APIUrl" key in Web.config of Clockwork.Web. This is the api url (Clockwork.API).
 * Run Clockwork.Web
