@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@model Clockwork.Web.Models.HomeViewModel
+
+
+<div class="text-center mb-4">
+    <h2>AWH Clockwork Project @ViewData["Version"] on @ViewData["Runtime"]!</h2>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <i class="fa fa-fw fa-flag"></i>
+            </div>
+        </div>
+        @Html.DropDownList("timeZone",
+                        Model.TimeZoneList,
+                        new { @class = "custom-select" })
+    </div>
+    <button id="getTime" type="button" class="btn btn-primary">Get the time</button>
+</div>
+
+<div class="table-responsive">
+    <table id="timeList" class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th>Id</th>
+                <th>Client IP</th>
+                <th>Time</th>
+                <th>Timezone</th>
+                <th>UTC Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/Modules/home.min.js"></script>
+}

@@ -1,0 +1,38 @@
+﻿@using System.Configuration;
+@{ 
+    var apiUrl = ConfigurationManager.AppSettings["APIUrl"].ToString();
+
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AWH Clockwork | @ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-clock-o d-inline"></i>
+            <strong class="d-none d-md-inline">AWH Clockwork</strong>
+        </a>
+    </nav>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main><!-- /.container -->
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript">
+        var _apiUrl = '@apiUrl';
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
